@@ -360,8 +360,16 @@ kbd {
 
   .ph {
     justify-self: center;
+    width: fit-content;
     max-width: 100%;
-    margin-top: 44px;
+    margin-top: 28px;
+  }
+
+  .ph img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100vh;
+    max-height: max(230px, calc(100svh - 470px));
   }
 
   .hero > div:first-child {

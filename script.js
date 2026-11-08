@@ -330,13 +330,38 @@ function drawHalo() {
       Math.pow(Math.max(0, 1 - Math.hypot(x - cx, y - cy) / R), 1.4) * 0.3,
   );
 }
+function fitPhoto() {
+  const ph = document.querySelector(".ph"),
+    img = ph.querySelector("img");
+  ph.style.marginTop = "";
+  if (!matchMedia("(max-width: 700px)").matches) {
+    img.style.maxHeight = "";
+    return;
+  }
+  const base = parseFloat(getComputedStyle(ph).marginTop) || 0;
+  const top = ph.getBoundingClientRect().top + scrollY;
+  const room = Math.max(200, Math.floor(innerHeight - top) + 2);
+  img.style.maxHeight = room + "px";
+  if (!img.complete || !img.naturalHeight) return;
+  const slack = room - img.getBoundingClientRect().height;
+  if (slack > 1) ph.style.marginTop = base + Math.floor(slack) + "px";
+}
 function drawAll() {
   if (!stack.length) {
+    fitPhoto();
     drawRamp();
     drawHalo();
   }
 }
-addEventListener("resize", drawAll);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawAll);
+addEventListener("orientationchange", () => setTimeout(drawAll, 200));
+let lastW = innerWidth;
+addEventListener("resize", () => {
+  if (innerWidth !== lastW) {
+    lastW = innerWidth;
+    drawAll();
+  }
+});
 addEventListener("load", drawAll);
 
 document.addEventListener("keydown", (e) => {
