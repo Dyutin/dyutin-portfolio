@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Dyutin Robin — Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Pixelify+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <filter
+          id="dz"
+          x="-8%"
+          y="-4%"
+          width="116%"
+          height="108%"
+          color-interpolation-filters="sRGB"
+        >
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values=".34 .33 .33 0 0 .34 .33 .33 0 0 .34 .33 .33 0 0 0 0 0 1 0"
+            result="g"
+          />
+          <feComponentTransfer in="g" result="g2">
+            <feFuncR type="gamma" exponent="2.2" />
+            <feFuncG type="gamma" exponent="2.2" />
+            <feFuncB type="gamma" exponent="2.2" />
+          </feComponentTransfer>
+          <feImage
+            href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAAAAADhZOFXAAAAU0lEQVR4nAFIALf/AAGBIaEJiSmpAMFB4WHJSelpADGxEZE5uRmZAPFx0VH5edlZAhwcXFwMDExMAM1N7W3FReVlAD29HZ01tRWVAP193V31ddVVFSAem8XV4kkAAAAASUVORK5CYII="
+            x="0"
+            y="0"
+            width="8"
+            height="8"
+            preserveAspectRatio="none"
+            style="image-rendering: pixelated"
+            result="t"
+          />
+          <feTile in="t" result="tt" />
+          <feComposite
+            in="g2"
+            in2="tt"
+            operator="arithmetic"
+            k1="0"
+            k2="1"
+            k3="1"
+            k4="-.5"
+            result="s"
+          />
+          <feComponentTransfer in="s">
+            <feFuncR type="discrete" tableValues="0 1" />
+            <feFuncG type="discrete" tableValues="0 1" />
+            <feFuncB type="discrete" tableValues="0 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceAlpha" operator="in" />
+        </filter>
+      </defs>
+    </svg>
+    <main>
+      <header class="hero" id="hero">
+        <div>
+          <h1>Dyutin<br />Robin</h1>
+          <p class="lede">
+            Graduate software engineer. Take a look below to explore my work
+            across full-stack systems, applied AI, and indie games.
+          </p>
+          <div class="links">
+            <a href="mailto:dyutin333@gmail.com">dyutin333@gmail.com</a>
+            <a href="https://github.com/Dyutin">github</a>
+            <a href="https://linkedin.com/in/dyutin">linkedin</a>
+          </div>
+        </div>
+        <div class="ph">
+          <canvas id="halo" aria-hidden="true"></canvas
+          ><img
+            src="assets/profile.png"
+            alt="Portrait of Dyutin, dithered black and white"
+            width="800"
+            height="870"
+          />
+        </div>
+      </header>
+      <canvas id="ramp" aria-hidden="true"></canvas>
+      <div id="crumb"></div>
+      <h2 id="zt"></h2>
+      <div id="tree"></div>
+      <footer>
+        ↑ ↓ move · ← → fold · <kbd>Enter</kbd> focus in · <kbd>Esc</kbd> back
+        out
+      </footer>
+    </main>
+    <script src="script.js" defer></script>
+  </body>
+</html>
