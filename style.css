@@ -360,12 +360,22 @@ kbd {
 
   .ph {
     justify-self: center;
-    max-width: 340px;
+    max-width: 100%;
     margin-top: 44px;
   }
 
   .hero > div:first-child {
     padding-bottom: 0;
+    text-align: center;
+  }
+
+  .lede {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .links {
+    justify-content: center;
   }
 
   .m {
