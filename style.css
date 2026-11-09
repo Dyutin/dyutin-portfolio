@@ -396,9 +396,9 @@ kbd {
   }
 
   .r {
-    margin-left: -22px;
-    padding-left: 22px;
-  }
+  margin-left: -22px;
+  padding-left: 28px;
+}
 
   main {
     padding-top: 36px;
