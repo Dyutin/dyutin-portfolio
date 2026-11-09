@@ -344,6 +344,33 @@ footer {
   background: var(--bg);
 }
 
+@supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
+  .hero > div:first-child,
+  #crumb,
+  #zt,
+  #tree,
+  footer {
+    filter: none;
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+  }
+
+  .hero > div:first-child::after,
+  #crumb::after,
+  #zt::after,
+  #tree::after,
+  footer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.12;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+  }
+}
+
 footer {
   margin-top: 60px;
   font-size: 11px;
