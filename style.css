@@ -260,7 +260,7 @@ h1 {
 }
 
 .d0 > .r .t {
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.126);
+  text-shadow: none;
   font:
     600 28px/1.25 "Instrument Serif",
     "Space Mono",
@@ -270,6 +270,11 @@ h1 {
 .d1 > .r .t {
   font-weight: 700;
   font-size: 16px;
+}
+
+#tree .d1 > .r .t,
+#tree .leaf > .r .t {
+  font-family: "Space Mono", monospace;
 }
 
 .s {
@@ -405,3 +410,4 @@ kbd {
     transition: none;
   }
 }
+
