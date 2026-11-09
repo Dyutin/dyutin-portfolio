@@ -43,10 +43,10 @@ const DATA = [
     t: "Projects",
     o: 1,
     k: [
-      {
-        t: "Clinical AI Platform",
+      { 
+        t: "OtoScan: Clinical AI Platform",
         m: "React · FastAPI · PyTorch",
-        s: "Middle ear disease diagnosis, end to end",
+        s: "Middle ear disease diagnosis, end to end. <a href='https://otoscan.dyutin.com' target='_blank' rel='noopener noreferrer'>Open Otoscan ↗</a>",
         k: [
           {
             t: "FastAPI + React with async inference queues so heavy model work never blocks the UI.",
@@ -185,11 +185,11 @@ function mk(n, d) {
     t.append(a);
   } else t.textContent = n.t;
   if (n.s) {
-    const s = document.createElement("span");
-    s.className = "s";
-    s.textContent = n.s;
-    t.append(s);
-  }
+  const s = document.createElement("span");
+  s.className = "s";
+  s.innerHTML = n.s;
+  t.append(s);
+}
   if (n.chips) {
     const c = document.createElement("div");
     c.className = "chips";
